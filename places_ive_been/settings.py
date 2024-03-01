@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'countries.apps.CountriesConfig',
-    'photos.app.PhotosConfig',
+    'photos.apps.PhotosConfig',
 
 ]
 
@@ -82,7 +82,7 @@ DATABASES = {
         "NAME": "places_db",
         "USER": "postgres",
         "PASSWORD": "postgres",
-        "HOST": "127.0.0.1",
+        "HOST": "db",
         "PORT": "5432",
     }
 }
