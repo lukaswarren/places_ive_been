@@ -105,6 +105,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# settings.py
+
+# Assuming your 'media' volume in docker-compose.yml is linked to this directory for Django as well
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
