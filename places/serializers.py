@@ -26,7 +26,8 @@ class PlaceSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         visits_data = validated_data.pop('visits', [])
-        place = Place.objects.create(**validated_data)
+        user = self.context['request'].user
+        place = Place.objects.create(user=user **validated_data)
         for visit_data in visits_data:
             images_data = visit_data.pop('images', [])
             visit = Visit.objects.create(place=place, **visit_data)

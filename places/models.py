@@ -18,7 +18,7 @@ class Place(models.Model):
 
 
 class Visit(models.Model):
-    location = models.ForeignKey(Place, related_name='visits', on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, related_name='visits', on_delete=models.CASCADE)
     date = models.DateField()
     visitNumber = models.PositiveIntegerField()
     author = models.CharField(max_length=100, blank=True, null=True)  # Optional author field
