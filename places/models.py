@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -11,7 +11,7 @@ class Place(models.Model):
     city = models.CharField(max_length=100)
     latLng = models.CharField(max_length=50)
     visible = models.BooleanField(default=False)
-    user = models.ForeignKey(AbstractUser, on_delete=models.CASCADE, related_name='locations')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='locations')
 
     def __str__(self):
         return f"{self.city}, {self.country}"

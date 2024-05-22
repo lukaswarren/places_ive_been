@@ -20,8 +20,9 @@ services:
     depends_on:
       - db
   nginx:
-    build: ./nginx
-    image: nginx:1.19.0-alpine
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
     ports:
       - 80:80
     volumes:
